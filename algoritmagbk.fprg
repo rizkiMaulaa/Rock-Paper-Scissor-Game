@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="HP"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-01 11:41:34 PM"/>
+        <attribute name="created" value="SFA7TEFQVE9QLUxFNjg4TTNFOzIwMjEtMTItMDE7MDc6MDM6NDAgQU07MjQyMQ=="/>
+        <attribute name="edited" value="SFA7TEFQVE9QLUxFNjg4TTNFOzIwMjEtMTItMDE7MTE6NDE6MzQgUE07NDsyNTQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="poinanda, poinlawan, permainanke, pilihplayer, pilihcom" type="Integer" array="False" size=""/>
+            <assign variable="poinanda" expression="0"/>
+            <assign variable="poinlawan" expression="0"/>
+            <assign variable="permainanke" expression="0"/>
+            <do expression="pilihplayer != 0">
+                <do expression="pilihplayer &lt; 1 &amp;&amp; pilihplayer &gt; 3">
+                    <output expression="&quot;pilih jurus(1. gunting, 2. kertas, 3. batu):&quot;" newline="True"/>
+                    <input variable="pilihplayer"/>
+                </do>
+                <assign variable="pilihcom" expression="random(3)+1"/>
+                <if expression="pilihcom=1">
+                    <then>
+                        <if expression="pilihplayer=1">
+                            <then>
+                                <output expression="&quot;hasil seri&quot;" newline="True"/>
+                                <output expression="&quot;komputer=gunting||pemain=gunting&quot;" newline="True"/>
+                                <assign variable="permainanke" expression="permainanke+1"/>
+                            </then>
+                            <else>
+                                <if expression="pilihplayer=2">
+                                    <then>
+                                        <output expression="&quot;komputer menang&quot;" newline="True"/>
+                                        <output expression="&quot;komputer=gunting||pemain=kertas&quot;" newline="True"/>
+                                        <assign variable="permainanke" expression="permainanke+1"/>
+                                        <assign variable="poinlawan" expression="poinlawan+1"/>
+                                    </then>
+                                    <else>
+                                        <if expression="pilihplayer=3">
+                                            <then>
+                                                <output expression="&quot;Pemain Menang&quot;" newline="True"/>
+                                                <output expression="&quot;komputer=gunting||pemain=batu&quot;" newline="True"/>
+                                                <assign variable="permainanke" expression="permainanke+1"/>
+                                                <assign variable="poinanda" expression="poinanda+1"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="pilihcom=2">
+                    <then>
+                        <if expression="pilihplayer=1">
+                            <then>
+                                <output expression="&quot;pemain menang&quot;" newline="True"/>
+                                <output expression="&quot;komputer=kertas||pemain=gunting&quot;" newline="True"/>
+                                <assign variable="permainanke" expression="permainanke+1"/>
+                                <assign variable="poinanda" expression="poinanda+1"/>
+                            </then>
+                            <else>
+                                <if expression="pilihplayer=2">
+                                    <then>
+                                        <output expression="&quot;hasil seri&quot;" newline="True"/>
+                                        <output expression="&quot;komputer=kertas||pemain=kertas&quot;" newline="True"/>
+                                        <assign variable="permainanke" expression="permainanke+1"/>
+                                    </then>
+                                    <else>
+                                        <if expression="pilihplayer=3">
+                                            <then>
+                                                <output expression="&quot;komputer menang&quot;" newline="True"/>
+                                                <output expression="&quot;komputer=kertas||pemain=batu&quot;" newline="True"/>
+                                                <assign variable="permainanke" expression="permainanke+1"/>
+                                                <assign variable="poinlawan" expression="poinlawan+1"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="pilihcom=3">
+                    <then>
+                        <if expression="pilihplayer=1">
+                            <then>
+                                <output expression="&quot;komputer menang&quot;" newline="True"/>
+                                <output expression="&quot;komputer=batu||pemain=gunting&quot;" newline="True"/>
+                                <assign variable="permainanke" expression="permainanke+1"/>
+                                <assign variable="poinlawan" expression="poinlawan+1"/>
+                            </then>
+                            <else>
+                                <if expression="pilihplayer=2">
+                                    <then>
+                                        <output expression="&quot;pemain menang&quot;" newline="True"/>
+                                        <output expression="&quot;komputer=batu||pemain=kertas&quot;" newline="True"/>
+                                        <assign variable="permainanke" expression="permainanke+1"/>
+                                        <assign variable="poinanda" expression="poinanda+1"/>
+                                    </then>
+                                    <else>
+                                        <if expression="pilihplayer=3">
+                                            <then>
+                                                <output expression="&quot;hasil seri&quot;" newline="True"/>
+                                                <output expression="&quot;komputer=batu||pemain=batu&quot;" newline="True"/>
+                                                <assign variable="permainanke" expression="permainanke+1"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;Poin anda:&quot;" newline="True"/>
+                <output expression="poinanda" newline="True"/>
+                <output expression="&quot;Poin lawan:&quot;" newline="True"/>
+                <output expression="poinlawan" newline="True"/>
+                <output expression="&quot;permainan ke:&quot;" newline="True"/>
+                <output expression="permainanke" newline="True"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
